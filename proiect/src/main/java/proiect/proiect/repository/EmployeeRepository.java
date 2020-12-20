@@ -19,7 +19,7 @@ public class EmployeeRepository {
     }
 
     public List<Employee> addEmployee(Employee e) {
-        jdbcTemplate.update(Querys.ADD_EMPLOYEE, e.getCnp(), e.getFirstName(), e.getLastName(), e.getPhoneNumber(), e.getPosition(),
+        jdbcTemplate.update(Querys.ADD_EMPLOYEE, e.getId(), e.getCnp(), e.getFirstName(), e.getLastName(), e.getPhoneNumber(), e.getPosition(),
                 e.getDatefrom(), e.getSalary());
         return jdbcTemplate.query(Querys.GET_EMPLOYEES_SQL, new BeanPropertyRowMapper<>(Employee.class));
     }

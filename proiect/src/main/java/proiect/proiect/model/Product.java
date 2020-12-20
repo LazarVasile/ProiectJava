@@ -11,6 +11,8 @@ public class Product {
     private Date expirationDate;
     private String barcode;
 
+    public Product() {}
+
     public Product(int id, String name, Provider provider, int price, Date expirationDate, String barcode) {
         this.id = id;
         this.name = name;

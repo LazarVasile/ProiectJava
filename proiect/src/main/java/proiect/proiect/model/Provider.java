@@ -6,6 +6,8 @@ public class Provider {
     private String address;
     private String phoneNumber;
 
+    public Provider() {}
+
     public Provider(int id, String name, String address, String phoneNumber) {
         this.id = id;
         this.name = name;

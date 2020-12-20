@@ -9,6 +9,8 @@ public class Sale {
     private Date date;
     private Product product;
 
+    public Sale() {}
+
     public Sale(int id, int number, Date date, Product product) {
         this.id = id;
         this.number = number;

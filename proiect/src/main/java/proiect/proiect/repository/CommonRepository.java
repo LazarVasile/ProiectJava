@@ -21,7 +21,7 @@ public class CommonRepository {
     }
 
     public List<Category> addCategory(Category c) {
-        jdbcTemplate.update(Querys.ADD_CATEGORY, c.getName());
+        jdbcTemplate.update(Querys.ADD_CATEGORY, c.getId(), c.getName());
         return jdbcTemplate.query(Querys.GET_CATEGORIES_SQL, new BeanPropertyRowMapper<>(Category.class));
     }
 
@@ -35,7 +35,7 @@ public class CommonRepository {
     }
 
     public List<Provider> addProvider(Provider p) {
-        jdbcTemplate.update(Querys.ADD_PROVIDER, p.getName(), p.getAdress(), p.getPhoneNumber());
+        jdbcTemplate.update(Querys.ADD_PROVIDER, p.getId(), p.getName(), p.getAdress(), p.getPhoneNumber());
         return jdbcTemplate.query(Querys.GET_PROVIDERS_SQL, new BeanPropertyRowMapper<>(Provider.class));
     }
 
@@ -49,7 +49,7 @@ public class CommonRepository {
     }
 
     public List<Sale> addSale(Sale s) {
-        jdbcTemplate.update(Querys.ADD_CATEGORY, s.getNumber(), s.getDate(), s.getProduct());
+        jdbcTemplate.update(Querys.ADD_CATEGORY, s.getId(), s.getNumber(), s.getDate(), s.getProduct());
         return jdbcTemplate.query(Querys.GET_SALES_SQL, new BeanPropertyRowMapper<>(Sale.class));
     }
 

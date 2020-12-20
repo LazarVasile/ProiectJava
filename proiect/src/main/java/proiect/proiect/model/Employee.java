@@ -14,6 +14,8 @@ public class Employee {
     private Date datefrom;
     private int salary;
 
+    public Employee() {}
+
     public Employee(int id, String cnp, String firstName, String lastName, String phoneNumber, String position, Date datefrom, int salary) {
         this.id = id;
         this.cnp = cnp;

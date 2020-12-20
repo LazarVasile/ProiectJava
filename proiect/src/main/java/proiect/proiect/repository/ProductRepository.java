@@ -19,7 +19,7 @@ public class ProductRepository {
     }
 
     public List<Product> addProduct(Product p) {
-        jdbcTemplate.update(Querys.ADD_PRODUCT, p.getName(), p.getProvider(), p.getPrice(), p.getExpirationDate(), p.getBarcode());
+        jdbcTemplate.update(Querys.ADD_PRODUCT, p.getId(), p.getName(), p.getProvider(), p.getPrice(), p.getExpirationDate(), p.getBarcode());
         return jdbcTemplate.query(Querys.GET_PRODUCTS_SQL, new BeanPropertyRowMapper<>(Product.class));
     }
 
